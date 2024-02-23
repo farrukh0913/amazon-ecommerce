@@ -1,54 +1,5 @@
+<app-header></app-header>
 <div class="main-conatiner">
-  <div class="navbar">
-    <div class="navbar-section1" [@scrollAnimation]="scrollDirection">
-      <div class="section1-content">
-        <div class="rows">
-          <div>
-            <mat-icon>phone_iphone</mat-icon>
-            <span>+92-320-984-563</span>
-          </div>
-          <div style="margin-left: 10px; width: 40%">
-            <mat-icon>email</mat-icon>
-            <span style="margin-left: 10px">{{ email }}</span>
-          </div>
-        </div>
-        <div class="rows" style="justify-content: end">
-          <div style="width: 10%; justify-content: center">
-            <i class="fa fa-facebook"></i>
-          </div>
-          <div style="width: 10%; justify-content: center">
-            <i class="fa fa-twitter"></i>
-          </div>
-          <div style="width: 10%; justify-content: center">
-            <i class="fa fa-google"></i>
-          </div>
-          <div style="width: 10%; justify-content: center">
-            <i class="fa fa-pinterest"></i>
-          </div>
-          <div style="width: 10%; justify-content: center; margin-right: 10px">
-            <i class="fa fa-skype"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="navbar-section2" [class.umar]="scrollDirection == 'hide'">
-      <div class="section2-content">
-        <div class="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1F_ghFMzRCErtCvxw6MMjM2VgLHrWzC_X6g&usqp=CAU">
-        </div>
-        <div class="section">
-          @for (item of layout; track item.id) {
-          <div
-            [class.selected]="item.label === selectedItem"
-            (click)="slectedValue(item.label)"
-          >
-            <span> {{ item.label }}</span>
-          </div>
-          }
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="content">
     <div class="aboutus">
       <h2>Products</h2>
@@ -69,14 +20,14 @@
                 Make your <span>choice</span> right now!
               </h3>
               <p class="card-hover__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam, blanditiis libero corporis nulla a aut?</p>
-              <a href="#" class="card-hover__link">
+              <a href="productDetails" class="card-hover__link">
                 <span>Learn How</span>
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>        
               </a>
             </div>
-            <div class="card-hover__extra">
+            <div class="card-hover__extra" (click)="productDetails()">
               <h4>Learn <span>now</span> and get <span>40%</span> discount!</h4>
             </div>
             <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60" alt="">
@@ -86,4 +37,5 @@
       </div>
     </div>
   </div>
+  <app-footer></app-footer>
 </div>

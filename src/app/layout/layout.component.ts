@@ -1,10 +1,12 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Component, HostListener } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 @Component({
   selector: "app-layout",
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, HeaderComponent, FooterComponent],
   templateUrl: "./layout.component.html",
   styleUrl: "./layout.component.scss",
   animations: [
@@ -19,23 +21,9 @@ import { MatIconModule } from "@angular/material/icon";
 ]
 })
 export class LayoutComponent {
-  email: string = "info@grafixdesirez.com";
-  selectedItem:string = 'Home'
   scrollDirection: 'show' | 'hide' = 'show';
-  layout: any = [
-    {
-      label: "Home",
-    },
-    {
-      label: " Contact Us ",
-    },
-    {
-      label: "About Us",
-    },
-    {
-      label: "What We Do",
-    },
-  ];
+
+  constructor(){}
   cardData:any=[
     {
     label  : "1"
@@ -73,7 +61,8 @@ export class LayoutComponent {
       // Adjust the value as needed
       this.scrollDirection = window.scrollY > 100 ? 'hide' : 'show';
   }
-  slectedValue(value:string){
-this.selectedItem = value
+
+  productDetails(){
+
   }
 }
