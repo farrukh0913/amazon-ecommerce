@@ -1,4 +1,4 @@
-.main-conatiner{
+.main-container {
     margin-top: 180px;
     .aboutus{
         width: 100%;
@@ -28,10 +28,26 @@
             line-height: 22px;
         }
     }
-    .details-main{
-        margin: 40px;
-        .details{
-            margin: 50px;
+    .main{
+        margin: 100px 200px;
+        p{
+            line-height: 1.8;
+            color: #888;
+            text-align: justify;
+            font-size: 13px;
+        }
+        img{
+            margin-left: 20px;
+            padding: 4px;
+            border: 1px solid #dddd;
+        }
+        .n-char{
+            display: block;
+            float: left;
+            line-height: 35px;
+            font-size: 45px;
+            margin: 6px 6px 0 0;
+            color: #00afd1;
         }
     }
 }

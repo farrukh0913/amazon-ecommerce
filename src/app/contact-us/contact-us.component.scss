@@ -1,4 +1,4 @@
-.main-conatiner{
+.main-container{
     margin-top: 180px;
     .aboutus{
         width: 100%;
@@ -28,10 +28,36 @@
             line-height: 22px;
         }
     }
-    .details-main{
-        margin: 40px;
-        .details{
-            margin: 50px;
+    .contanier{
+        padding: 3% 0;
+    }
+    .contact{
+        padding:3% 0 0 10%;
+        button{
+            color: #fff;
+        }
+    }
+    .info{
+        padding-top: 3%;
+        
+    }
+    .widgets-info{
+        div{
+            list-style: none;
+            margin-bottom: 12px;
+            color: #888;
+        }
+        span{
+            font-weight: 500;
+            color: #888;
+        }
+    }
+    .working-time{
+        div{
+            color: #888;
+        }
+        span{
+            font-weight: 500;
         }
     }
 }

@@ -1,4 +1,4 @@
-<div class="main-conatiner">
+<div class="main-conatiner fixed-top">
 <div class="navbar">
     <div class="navbar-section1" [@scrollAnimation]="scrollDirection">
       <div class="section1-content">
@@ -13,19 +13,19 @@
           </div>
         </div>
         <div class="rows" style="justify-content: end">
-          <div style="width: 10%; justify-content: center">
+          <div style="width: 10%; justify-content: center" (click)="openSocial('https://www.facebook.com/')">
             <i class="fa fa-facebook"></i>
           </div>
-          <div style="width: 10%; justify-content: center">
+          <div style="width: 10%; justify-content: center" (click)="openSocial('https://www.twitter.com/')">
             <i class="fa fa-twitter"></i>
           </div>
-          <div style="width: 10%; justify-content: center">
+          <div style="width: 10%; justify-content: center" (click)="openSocial('https://www.google.com/')">
             <i class="fa fa-google"></i>
           </div>
-          <div style="width: 10%; justify-content: center">
+          <div style="width: 10%; justify-content: center" (click)="openSocial('https://www.pinterest.com/')">
             <i class="fa fa-pinterest"></i>
           </div>
-          <div style="width: 10%; justify-content: center; margin-right: 10px">
+          <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="openSocial('https://www.skype.com/')">
             <i class="fa fa-skype"></i>
           </div>
         </div>
@@ -40,7 +40,7 @@
           @for (item of layout; track item.id) {
           <div
             [class.selected]="item.label === selectedItem"
-            (click)="slectedValue(item.label)"
+            (click)="slectedValue(item)"
           >
             <span> {{ item.label }}</span>
           </div>

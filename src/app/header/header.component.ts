@@ -1,6 +1,7 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, HostListener } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -26,21 +27,30 @@ export class HeaderComponent {
   layout: any = [
     {
       label: "Home",
+      path: ""
     },
     {
       label: " Contact Us ",
+      path: "contact"
     },
     {
       label: "About Us",
+      path: "about"
     },
     {
       label: "What We Do",
+      path: "whatwedo"
     },
   ];
-  constructor(){}
+  constructor(private router:Router){}
   @HostListener('window:scroll', ['$event'])
 
-  slectedValue(value:string){
-    this.selectedItem = value
+  slectedValue(value:any){
+    this.selectedItem = value.label
+    this.router.navigate([`${value.path}`])
+      }
+
+      openSocial(link:any){
+        window.open(`${link}`)
       }
 }
