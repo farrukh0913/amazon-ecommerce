@@ -3,6 +3,7 @@ import { Component, HostListener } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-layout",
   standalone: true,
@@ -22,8 +23,14 @@ import { FooterComponent } from "../footer/footer.component";
 })
 export class LayoutComponent {
   scrollDirection: 'show' | 'hide' = 'show';
-
-  constructor(){}
+  admin:any
+  constructor(private router:Router){
+    this.admin = localStorage.getItem("admin");
+    window.scroll({
+      top:0,
+      left:0
+    })
+  }
   cardData:any=[
     {
     label  : "1"

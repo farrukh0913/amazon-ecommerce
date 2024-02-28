@@ -1,5 +1,4 @@
 .main-conatiner{
-    margin-top: 180px;
     .aboutus{
         width: 100%;
         background-color: lightgray;
@@ -19,21 +18,18 @@
     margin: 0;
     color: #444;
         }
-        p{
-            font-weight: 300;
-            color: #888;
-            margin-top: 10px;
-            font-size: 13px;
-            font-family: 'Open Sans', sans-serif;
-            line-height: 22px;
-        }
     }
     .container{
-        margin: 70px;
-        p{
-            color: #888;
-            line-height:2 ;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #888;
+        .inner-container{
+            width: 30%;
         }
-
+    button{
+        color: #fff;
+    }
     }
 }

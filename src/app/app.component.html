@@ -1,4 +1,5 @@
-
-<app-header></app-header>
+@if (isHeader()) {
+    <app-header></app-header>
+}
 <router-outlet></router-outlet>
 <app-footer class="bot"></app-footer>

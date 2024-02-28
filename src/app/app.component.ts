@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -12,4 +12,9 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'ecomerce-demo';
+
+  constructor(private router:Router){}
+  isHeader(){
+    return !(this.router.url == '/adminLogin')
+  }
 }

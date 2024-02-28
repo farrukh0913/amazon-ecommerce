@@ -28,6 +28,17 @@
           <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="openSocial('https://www.skype.com/')">
             <i class="fa fa-skype"></i>
           </div>
+          
+          @if (!admin) {
+            <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="adminLogin()">
+              <i class="fa fa-user"></i>
+            </div>
+          }
+          @if (admin) {
+            <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="logout()">
+              <i class="fa fa-sign-out"></i>
+            </div>
+          }
         </div>
       </div>
     </div>

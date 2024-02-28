@@ -2,6 +2,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { Component, HostListener } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { AdminLogin } from '../model/admin';
 
 @Component({
   selector: 'app-header',
@@ -24,6 +25,7 @@ export class HeaderComponent {
   selectedItem:string = 'Home'
   scrollDirection: 'show' | 'hide' = 'show';
   email: string = "info@grafixdesirez.com";
+  admin:any
   layout: any = [
     {
       label: "Home",
@@ -42,7 +44,9 @@ export class HeaderComponent {
       path: "whatwedo"
     },
   ];
-  constructor(private router:Router){}
+  constructor(private router:Router){
+    this.admin = localStorage.getItem("admin")
+  }
   @HostListener('window:scroll', ['$event'])
 
   slectedValue(value:any){
@@ -52,5 +56,15 @@ export class HeaderComponent {
 
       openSocial(link:any){
         window.open(`${link}`)
+      }
+
+      adminLogin(){
+        this.router.navigate(['adminLogin']);
+      }
+
+      logout(){
+        localStorage.clear();
+        window.location.reload()
+
       }
 }
