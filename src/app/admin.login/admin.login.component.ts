@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AdminLogin } from '../model/admin';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RequestService } from '../services/requestService';
 
 @Component({
   selector: 'app-admin.login',
@@ -11,11 +12,19 @@ import { Router } from '@angular/router';
   styleUrl: './admin.login.component.scss'
 })
 export class AdminLoginComponent {
-  login:AdminLogin = new AdminLogin();
-  constructor(private router:Router){}
+  login: AdminLogin = new AdminLogin();
+  constructor(private router: Router,
+    private requestService: RequestService) { }
 
-  appLogin(value:any){
-    localStorage.setItem("admin",value);
-    this.router.navigate(['dashboard']);
+  appLogin(value: any) {
+    this.requestService.adminLogin(value).subscribe(res => {
+      if (res) {
+        localStorage.setItem("admin", JSON.stringify(value));
+        this.router.navigate(['dashboard']);
+      }
+    }, (err) => {
+      alert("Invalid email or password")
+    })
+
   }
 }

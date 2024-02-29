@@ -6,11 +6,17 @@
         <form #form="ngForm" class="inner-container">
         <div class=" pt-5">
             <label>Email</label>
-            <input type="email" [(ngModel)]="login.email" name="email" class="form-control">
+            <input type="email" [(ngModel)]="login.email" name="email" class="form-control" #email="ngModel" required>
+            @if (email.invalid && (email.touched || email.dirty || form.submitted)) {
+                <span style="color: #ff6e6e;">Email is required</span>
+            }
         </div>
         <div class=" pt-3">
             <label>Password</label>
-            <input type="password" [(ngModel)]="login.password" name="password" class="form-control">
+            <input type="password" [(ngModel)]="login.password" name="password" class="form-control" #password="ngModel" required>
+            @if (password.invalid && (password.touched || password.dirty || form.submitted)) {
+                <span style="color: #ff6e6e;">Password is required</span>
+            }
         </div>
         <div class="pt-3 pb-3">
             <button class="btn btn-info" (click)="appLogin(form.value)">Login</button>

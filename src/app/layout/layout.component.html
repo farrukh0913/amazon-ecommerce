@@ -6,7 +6,9 @@
         We Offer You Our Portfolio And Our Clients, Who Always Proud Of Them,
         And We Hope To Obtain Admire.
       </p>
-      <span> Check Our Products! </span>
+      @if (admin.email) {
+        <button class="btn btn-info" style="color: #fff;">Add Product</button>
+      }
     </div>
     <div class="container mt-5">
       <div class="row">
@@ -16,7 +18,7 @@
           <!-- <div class="inner-card"></div> -->
           <div class="card-hover">
             <div class="card-hover__content">
-              @if (admin) {
+              @if (admin.email) {
                 <div class="editUpdate">
                   <i class="fa fa-pencil-square" ></i>
                   <i class="fa fa-trash" ></i>

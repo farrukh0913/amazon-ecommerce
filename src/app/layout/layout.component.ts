@@ -25,7 +25,8 @@ export class LayoutComponent {
   scrollDirection: 'show' | 'hide' = 'show';
   admin:any
   constructor(private router:Router){
-    this.admin = localStorage.getItem("admin");
+    this.admin = JSON.parse(localStorage.getItem("admin") || '[]') ;
+    console.log('this.admin: ', this.admin);
     window.scroll({
       top:0,
       left:0
