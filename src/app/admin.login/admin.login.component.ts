@@ -19,7 +19,7 @@ export class AdminLoginComponent {
   appLogin(value: any) {
     this.requestService.adminLogin(value).subscribe(res => {
       if (res) {
-        localStorage.setItem("admin", JSON.stringify(value));
+        localStorage.setItem("admin", JSON.stringify(res.data));
         this.router.navigate(['dashboard']);
       }
     }, (err) => {

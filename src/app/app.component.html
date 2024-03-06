@@ -1,5 +1,9 @@
 @if (isHeader()) {
-    <app-header></app-header>
+<app-header></app-header>
 }
-<router-outlet></router-outlet>
-<app-footer class="bot"></app-footer>
+<div class="d-flex flex-column">
+    <router-outlet></router-outlet>
+    <div class="bottom-0">
+        <app-footer></app-footer>
+    </div>
+</div>

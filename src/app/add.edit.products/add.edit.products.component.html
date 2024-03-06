@@ -1,0 +1,44 @@
+<div class="main-conatiner">
+
+    <mat-dialog-content>
+        <div>
+            <form #form="ngForm">
+                <div class="m-2 text-center">
+                    <h2>{{data?._id? 'Update' : 'Add'}} Product</h2>
+                </div>
+                <div class="d-flex">
+                    <div class="col-8">
+                        <label>Product Name</label>
+                        <input type="text" name="productName" class="form-control" [(ngModel)]="addProduct.productName">
+                    </div>
+                    <div class="col-3 ml-2" style="margin-left: 60px;">
+                        <label>Price</label>
+                        <input type="number" name="price" class="form-control" [(ngModel)]="addProduct.price">
+                    </div>
+                </div>
+                <div>
+                    <label>Discription</label>
+                    <textarea name="discription" class="form-control" cols="20" rows="4"
+                        [(ngModel)]="addProduct.discription"></textarea>
+                </div>
+                <div class="pt-2 col-4">
+                    <input type="file" name="image" class="form-control" accept="image/*"
+                        (change)="imageBase64($event)">
+                </div>
+
+            </form>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="btn btn-danger" (click)="onNoClick()">Cancel</button>
+        <button class="btn btn-info " cdkFocusInitial (click)="addUpdateProduct(form.value)">Save</button>
+    </mat-dialog-actions>
+</div>
+@if (loading) {
+<div class="spinner-wrapper">
+    <div class="spinner-border text-info" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+}

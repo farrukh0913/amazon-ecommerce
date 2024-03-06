@@ -7,12 +7,12 @@
         And We Hope To Obtain Admire.
       </p>
       @if (admin.email) {
-        <button class="btn btn-info" style="color: #fff;">Add Product</button>
+        <button class="btn btn-info" (click)="addProduct()" style="color: #fff;">Add Product</button>
       }
     </div>
     <div class="container mt-5">
       <div class="row">
-        @for (item of cardData; track item.grid) {
+        @for (item of products; track item.grid) {
         <div class="col-sm-4" style="height: 600px">
           
           <!-- <div class="inner-card"></div> -->
@@ -20,28 +20,28 @@
             <div class="card-hover__content">
               @if (admin.email) {
                 <div class="editUpdate">
-                  <i class="fa fa-pencil-square" ></i>
-                  <i class="fa fa-trash" ></i>
+                  <i class="fa fa-pencil-square" (click)="addProduct(item)"></i>
+                  <i class="fa fa-trash" (click)="deleteProducts(item._id)"></i>
                 </div>
               }
               <h3 class="card-hover__title">
-                Make your <span>choice</span> right now!
+                {{item.productName}}
               </h3>
               <div class="d-flex justify-content-end">
-                <h3>Price: <span>25$</span></h3>
+                <h3>Price: <span>{{item.price}}</span></h3>
               </div>
               <!-- <p class="card-hover__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam, blanditiis libero corporis nulla a aut?</p> -->
-              <a href="productDetails" class="card-hover__link">
+              <a  [routerLink]="['/productDetails']" [queryParams]="{prop: item._id}" routerLinkActive="router-link-active"  class="card-hover__link">
                 <span>More Details</span>
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>        
               </a>
             </div>
-            <div class="card-hover__extra" (click)="productDetails()">
+            <div class="card-hover__extra">
               <h4>Learn <span>now</span> and get <span>40%</span> discount!</h4>
             </div>
-            <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60" alt="">
+            <img [src]="item.image" alt="">
           </div>
         </div>
         }
@@ -49,3 +49,11 @@
     </div>
   </div>
 </div>
+
+@if (loading) {
+  <div class="spinner-wrapper">
+      <div class="spinner-border text-info" role="status">
+          <span class="sr-only">Loading...</span>
+      </div>
+  </div>
+  }

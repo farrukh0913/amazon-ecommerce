@@ -1,3 +1,6 @@
+
+
+
 <div class="main-conatiner">
     <div class="aboutus">
         <h2>Product Details</h2>
@@ -6,17 +9,26 @@
             And We Hope To Obtain Admire.
         </p>
     </div>
+    @if (loading) {
+        <div class="spinner-wrapper">
+            <div class="spinner-border text-info" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+      } @else {
     <div class="details-main d-flex ">
-        <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=60"
-            alt="">
+        <div class="image">
+            <img [src]="product.image"
+                alt="" width="300" height="400">
+        </div>
         <div class="details">
-            <h2>Make your choice right now!</h2>
+            <h2>{{product.productName}}</h2>
             <h3>Discription</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam,
-                blanditiis libero corporis nulla a aut?</p>
+            <p>{{product.discription}}</p>
             <h2>price</h2>
-            <h3>10$</h3>
+            <h3>{{product.price}}</h3>
             <button class="btn btn-info">Buy Now</button>
         </div>
     </div>
+}
 </div>
