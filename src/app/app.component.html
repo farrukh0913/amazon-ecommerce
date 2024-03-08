@@ -3,7 +3,9 @@
 }
 <div class="d-flex flex-column">
     <router-outlet></router-outlet>
+    @if (isHeader()) {
     <div class="bottom-0">
         <app-footer></app-footer>
     </div>
+}
 </div>

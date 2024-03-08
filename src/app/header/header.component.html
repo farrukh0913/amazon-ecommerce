@@ -3,11 +3,11 @@
     <div class="navbar-section1" [@scrollAnimation]="scrollDirection">
       <div class="section1-content">
         <div class="rows">
-          <div>
+          <div class="d-flex justify-content-center">
             <mat-icon>phone_iphone</mat-icon>
             <span>+92-320-984-563</span>
           </div>
-          <div style="margin-left: 10px; width: 40%">
+          <div style="margin-left: 10px; width: 40%" class="d-flex justify-content-center">
             <mat-icon>email</mat-icon>
             <span style="margin-left: 10px">{{ email }}</span>
           </div>
@@ -29,14 +29,19 @@
             <i class="fa fa-skype"></i>
           </div>
           
-          @if (!admin) {
+          @if (!admin.email) {
             <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="adminLogin()">
               <i class="fa fa-user"></i>
             </div>
           }
-          @if (admin) {
+          @if (admin.email) {
             <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="logout()">
               <i class="fa fa-sign-out"></i>
+            </div>
+          }
+          @if(admin.role === "admin"){
+            <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="goToSupervisors()">
+              <i class="fa fa-users"></i>
             </div>
           }
         </div>

@@ -1,25 +1,29 @@
 .main-conatiner{
 .navbar {
     width: 100%;
-    height: 130px;
+    height: 100px;
     display: flex;
     flex-direction: column;
-    // position: fixed; 
     top: 0;  
     background: #fff;
-    // z-index: 999;
     .navbar-section1 {
-      height: 25%;
+      height: 30%;
       width: 100%;
       display: flex;
       justify-content: center;
-      border-bottom: 1px solid #00afd1;
+      border-bottom: 1px solid #d3d3d3;
       .section1-content {
         width: 90%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         .rows {
+          mat-icon{
+            font-size: 18px;
+          }
+          span{
+            font-size: 12px !important;
+          }
           width: 45%;
           display: flex;
           flex-direction: row;
@@ -29,9 +33,11 @@
             border-right: 2px solid #aaaaaa;
             display: flex;
             flex-direction: row;
-            align-items: center;
             width: 30%;
             color: #aaaaaa;
+            i{
+            font-size: 16px !important;
+            }
             &:hover {
               color: #00afd1;
               cursor: pointer;

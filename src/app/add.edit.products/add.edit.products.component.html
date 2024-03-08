@@ -9,30 +9,43 @@
                 <div class="d-flex">
                     <div class="col-8">
                         <label>Product Name</label>
-                        <input type="text" name="productName" class="form-control" [(ngModel)]="addProduct.productName">
+                        <input type="text" name="productName" class="form-control" [(ngModel)]="addProduct.productName"
+                            #productName="ngModel" required>
+                        @if (productName.invalid && (productName.touched || productName.dirty || form.submitted)) {
+                        <span style="color: #ff6e6e;">Field is required</span>
+                        }
                     </div>
                     <div class="col-3 ml-2" style="margin-left: 60px;">
                         <label>Price</label>
-                        <input type="number" name="price" class="form-control" [(ngModel)]="addProduct.price">
+                        <input type="number" name="price" class="form-control" [(ngModel)]="addProduct.price"
+                            #price="ngModel" required>
+                        @if (price.invalid && (price.touched || price.dirty || form.submitted)) {
+                        <span style="color: #ff6e6e;">Field is required</span>
+                        }
                     </div>
                 </div>
                 <div>
                     <label>Discription</label>
                     <textarea name="discription" class="form-control" cols="20" rows="4"
-                        [(ngModel)]="addProduct.discription"></textarea>
+                        [(ngModel)]="addProduct.discription" #discription="ngModel" required></textarea>
+                    @if (discription.invalid && (discription.touched || discription.dirty || form.submitted)) {
+                    <span style="color: #ff6e6e;">Field is required</span>
+                    }
                 </div>
                 <div class="pt-2 col-4">
-                    <input type="file" name="image" class="form-control" accept="image/*"
+                    <input type="file" name="image" class="form-control" accept="image/*" required
                         (change)="imageBase64($event)">
+                    @if ( form.submitted && !addProduct.image) {
+                    <span style="color: #ff6e6e;">Field is required</span>
+                    }
                 </div>
-
             </form>
         </div>
 
     </mat-dialog-content>
     <mat-dialog-actions>
         <button class="btn btn-danger" (click)="onNoClick()">Cancel</button>
-        <button class="btn btn-info " cdkFocusInitial (click)="addUpdateProduct(form.value)">Save</button>
+        <button class="btn btn-info " (click)="addUpdateProduct(form)">Save</button>
     </mat-dialog-actions>
 </div>
 @if (loading) {

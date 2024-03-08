@@ -1,0 +1,33 @@
+<div class="main-conatiner">
+    <div class="aboutus">
+        <h2>Supervisors</h2>
+    </div>
+    <div class="container">
+        <div class="d-flex justify-content-end">
+            <button class="add-btn btn btn-info" (click)="addEditSupervisor()">Add Supervisor</button>
+        </div>
+        <table class="table table-striped border">
+            <thead>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action </th>
+              </tr>
+            </thead>
+            <tbody>
+                @for (item of supervisors; track $index) {
+              <tr>
+                <td>{{item.firstName}}</td>
+                <td>{{item.lastName}}</td>
+                <td>{{item.email}}</td>
+                <td>
+                        <i class="fa fa-pencil-square edit-btn" (click)="addEditSupervisor(item)"></i>
+                        <i class="fa fa-trash del-btn" style="margin-left: 8px;" (click)="deleteSupervisor(item._id)"></i>
+                </td>
+              </tr>
+            }
+            </tbody>
+          </table>
+    </div>
+</div>

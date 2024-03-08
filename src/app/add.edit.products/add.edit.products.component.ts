@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { AddProduct } from '../model/product';
 import { RequestService } from '../services/requestService';
@@ -30,22 +30,23 @@ export class AddEditProductsComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-  addUpdateProduct(value: any) {
-    value.image = this.addProduct.image;
-    this.loading = true;
-    if(this.data?._id){
-      this.requestService.updateProductByid(this.data._id,value).subscribe(res =>{
-        this.loading = false;
-        this.dialogRef.close();
-      })
-    }else{
-      console.log('value: ', value);
-      this.requestService.addProduct(value).subscribe(res => {
-        if (res.data) {
+  addUpdateProduct(form: NgForm) {
+    form.value.image = this.addProduct.image;
+    if (form.valid) {
+      this.loading = true;
+      if (this.data?._id) {
+        this.requestService.updateProductByid(this.data._id, form.value).subscribe(res => {
           this.loading = false;
-          this.dialogRef.close()
-        }
-      })
+          this.dialogRef.close();
+        })
+      } else {
+        this.requestService.addProduct(form.value).subscribe(res => {
+          if (res.data) {
+            this.loading = false;
+            this.dialogRef.close()
+          }
+        })
+      }
     }
   }
 

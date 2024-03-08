@@ -16,15 +16,20 @@ export class AdminLoginComponent {
   constructor(private router: Router,
     private requestService: RequestService) { }
 
-  appLogin(value: any) {
-    this.requestService.adminLogin(value).subscribe(res => {
-      if (res) {
-        localStorage.setItem("admin", JSON.stringify(res.data));
-        this.router.navigate(['dashboard']);
-      }
-    }, (err) => {
-      alert("Invalid email or password")
-    })
+  appLogin(form: any) {
+    if(form.valid){
+      this.requestService.adminLogin(form.value).subscribe(res => {
+        if (res) {
+          localStorage.setItem("admin", JSON.stringify(res.data));
+          this.router.navigate(['dashboard']);
+        }
+      }, (err) => {
+        alert("Invalid email or password")
+      })
+    }
+  }
 
+  cancelBtn(){
+    this.router.navigate(['dashboard']);
   }
 }

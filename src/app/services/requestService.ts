@@ -27,7 +27,19 @@ export class RequestService {
     getProductById(id: any): Observable<any> {
         return this.http.get(`${environment.ApiBaseUrl}product/getProductById/${id}`);
     }
-    updateProductByid(id:any,payload:any):Observable<any>{
-        return this.http.put(`${environment.ApiBaseUrl}product/updateProduct/${id}`,payload)
+    updateProductByid(id: any, payload: any): Observable<any> {
+        return this.http.put(`${environment.ApiBaseUrl}product/updateProduct/${id}`, payload)
+    }
+    addSupervisor(payload: any): Observable<any> {
+        return this.http.post(`${environment.ApiBaseUrl}supervisor/addSupervisor`, payload)
+    }
+    getAllSupervisor(): Observable<any> {
+        return this.http.get(`${environment.ApiBaseUrl}supervisor/getAllSupervisor`)
+    }
+    removeSupervisorById(id: any): Observable<any> {
+        return this.http.delete(`${environment.ApiBaseUrl}supervisor/removeSupervisorById/${id}`)
+    }
+    updateSupervisor(id: any, payload: any): Observable<any> {
+        return this.http.put(`${environment.ApiBaseUrl}supervisor/updateSupervisor/${id}`, payload)
     }
 }    
