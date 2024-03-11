@@ -57,4 +57,8 @@ export class HeaderComponent {
   goToSupervisors() {
     this.router.navigate(['supervisorList']);
   }
+
+  feedBack(){
+    this.router.navigate(['feedBack']); 
+  }
 }

@@ -42,4 +42,13 @@ export class RequestService {
     updateSupervisor(id: any, payload: any): Observable<any> {
         return this.http.put(`${environment.ApiBaseUrl}supervisor/updateSupervisor/${id}`, payload)
     }
+    submitFeedback(payload:any): Observable<any> {
+        return this.http.post(`${environment.ApiBaseUrl}feedBack/addFeedBack`,payload);
+    }
+    getAllFeedback():Observable<any> {
+        return this.http.get(`${environment.ApiBaseUrl}feedBack/getAllFeedback`);
+    }
+    removeFeedbackById(id: any): Observable<any> {
+        return this.http.delete(`${environment.ApiBaseUrl}feedBack/removeFeedback/${id}`)
+    }
 }    

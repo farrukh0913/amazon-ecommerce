@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ContactUs } from '../model/contactus';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+import { RequestService } from '../services/requestService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-us',
@@ -11,9 +13,16 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContactUSComponent {
   contactUs: ContactUs =new ContactUs();
-  constructor(){}
+  constructor(private requestService: RequestService,
+              private router:Router ){}
 
-  sendMessage(value:any){
-    console.log(value);
+  sendMessage(form:NgForm){
+    if(form.valid){
+    this.requestService.submitFeedback(form.value).subscribe(res =>{
+      if(res){
+        this.router.navigate(['dashboard']);
+      }
+    })
+    }
   }
 }

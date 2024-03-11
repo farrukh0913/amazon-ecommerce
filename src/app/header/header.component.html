@@ -44,6 +44,11 @@
               <i class="fa fa-users"></i>
             </div>
           }
+          @if (admin.email) {
+            <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="feedBack()">
+              <i class="fa fa-comment"></i>
+            </div>
+          }
         </div>
       </div>
     </div>
