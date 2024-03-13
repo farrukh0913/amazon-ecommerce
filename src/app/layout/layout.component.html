@@ -6,7 +6,7 @@
         We Offer You Our Portfolio And Our Clients, Who Always Proud Of Them,
         And We Hope To Obtain Admire.
       </p>
-      @if (admin.email) {
+      @if (admin.userName) {
         <button class="btn btn-info" (click)="addProduct()" style="color: #fff;">Add Product</button>
       }
     </div>
@@ -25,10 +25,10 @@
                   <a  [routerLink]="['/productDetails']" [queryParams]="{prop: item._id}" routerLinkActive="router-link-active"  class="card-title">{{item.productName}}</a>
                   <h2 class="price">Rs: {{item.price}}</h2>
                 </div>
-                @if (admin.email) {
+                @if (admin.userName) {
                   <div class="editUpdate">
                     <i class="fa fa-pencil-square" (click)="addProduct(item)"></i>
-                    <i class="fa fa-trash" (click)="deleteProducts(item._id)"></i>
+                    <i class="fa fa-trash" (click)="deleteConfirmation(item._id)"></i>
                   </div>
                 }
               </div>

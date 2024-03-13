@@ -12,6 +12,7 @@
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">User Name</th>
                 <th scope="col">Action </th>
               </tr>
             </thead>
@@ -21,9 +22,10 @@
                 <td>{{item.firstName}}</td>
                 <td>{{item.lastName}}</td>
                 <td>{{item.email}}</td>
+                <td>{{item.userName}}</td>
                 <td>
                         <i class="fa fa-pencil-square edit-btn" (click)="addEditSupervisor(item)"></i>
-                        <i class="fa fa-trash del-btn" style="margin-left: 8px;" (click)="deleteSupervisor(item._id)"></i>
+                        <i class="fa fa-trash del-btn" style="margin-left: 8px;" (click)="deleteConfirmation(item._id)"></i>
                 </td>
               </tr>
             }

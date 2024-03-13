@@ -1,6 +1,6 @@
 
 export class AdminLogin {
-    email: string = '';
+    userName: string = '';
     password: any;
     role: string = '';
 }

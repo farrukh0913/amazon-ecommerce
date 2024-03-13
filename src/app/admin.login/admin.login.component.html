@@ -37,10 +37,10 @@
             <form #form="ngForm" class="inner-container">
                 <label class="login-header">Admin Login</label>
                 <div class=" pt-5">
-                    <label>Email</label>
-                    <input type="email" [(ngModel)]="login.email" name="email" class="form-control" #email="ngModel"
+                    <label>User Name</label>
+                    <input type="text" [(ngModel)]="login.userName" name="userName" class="form-control" #userName="ngModel"
                         required>
-                    @if (email.invalid && (email.touched || email.dirty || form.submitted)) {
+                    @if (userName.invalid && (userName.touched || userName.dirty || form.submitted)) {
                     <span style="color: #ff6e6e;">Email is required</span>
                     }
                 </div>

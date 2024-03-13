@@ -3,4 +3,6 @@ export class SupervisorModel {
     lastName: string = '';
     email: string = '';
     password: string ='';
+    confirmPassword: string = '';
+    userName: string = '';
 }

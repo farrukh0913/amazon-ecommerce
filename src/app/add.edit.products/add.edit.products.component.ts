@@ -17,7 +17,6 @@ export class AddEditProductsComponent {
   constructor(public dialogRef: MatDialogRef<AddEditProductsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private requestService: RequestService) {
-    console.log(data, "dataaa");
     if (data) {
       this.addProduct = {
         productName: data.productName,
@@ -30,6 +29,7 @@ export class AddEditProductsComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
   addUpdateProduct(form: NgForm) {
     form.value.image = this.addProduct.image;
     if (form.valid) {
@@ -37,14 +37,18 @@ export class AddEditProductsComponent {
       if (this.data?._id) {
         this.requestService.updateProductByid(this.data._id, form.value).subscribe(res => {
           this.loading = false;
-          this.dialogRef.close();
+          this.dialogRef.close("save");
+        }, (err) => {
+          this.loading = false;
         })
       } else {
         this.requestService.addProduct(form.value).subscribe(res => {
           if (res.data) {
             this.loading = false;
-            this.dialogRef.close()
+            this.dialogRef.close("save")
           }
+        }, (err) => {
+          this.loading = false;
         })
       }
     }

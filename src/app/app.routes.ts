@@ -8,6 +8,7 @@ import { AdminLoginComponent } from './admin.login/admin.login.component';
 import { SupervisorListComponent } from './supervisors/supervisor.list/supervisor.list.component';
 import { AddEditSupervisorComponent } from './supervisors/add.edit.supervisor/add.edit.supervisor.component';
 import { AuthGuardService as AuthGuard } from './services/auth-guard'; 
+import { FeedBackComponent } from './feed-back/feed-back.component';
 export const routes: Routes = [
     {
         path: '',
@@ -46,6 +47,10 @@ export const routes: Routes = [
     {
         path: 'addEditSupervisor',
         component: AddEditSupervisorComponent
+    },
+    {
+        path: 'feedBack',
+        component: FeedBackComponent
     }
     
     

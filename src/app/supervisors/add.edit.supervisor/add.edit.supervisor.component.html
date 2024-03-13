@@ -1,52 +1,85 @@
 <div class="main-conatiner">
     <div class="text-center heading">
+        <div></div>
         <h2>Add Supervisor</h2>
+        <i class="fa fa-close" (click)="cancelForm()"></i>
     </div>
     <div class="container">
-        <form #form="ngForm">
+        <form #form="ngForm" name="form">
             <div class="d-flex justify-content-center mt-5">
                 <div class="col-5">
                     <label>First Name</label>
-                    <input type="text" name="firstName" class="form-control" [(ngModel)]="supervisor.firstName" required #firstname="ngModel">
-                    @if (firstname.invalid && (firstname.touched || firstname.dirty || form.submitted)) {
-                        <span style="color: #ff6e6e;">Field is required</span>
-                        }
+                    <input type="text" name="firstName" class="form-control" [(ngModel)]="supervisor.firstName" required
+                        #firstname="ngModel">
+                    @if (firstname.invalid && (firstname.touched || firstname.dirty || isSubmitted)) {
+                    <span style="color: #ff6e6e;">Field is required</span>
+                    }
                 </div>
                 <div class="field col-5">
                     <label>Last Name</label>
-                    <input type="text" name="lastName" class="form-control" [(ngModel)]="supervisor.lastName" required #lastname="ngModel">
-                    @if (lastname.invalid && (lastname.touched || lastname.dirty || form.submitted)) {
-                        <span style="color: #ff6e6e;">Field is required</span>
-                        }
+                    <input type="text" name="lastName" class="form-control" id="lastName"
+                        [(ngModel)]="supervisor.lastName" required #lastName="ngModel">
+                    @if (lastName.invalid && (lastName.touched || lastName.dirty || isSubmitted)) {
+                    <span style="color: #ff6e6e;">Field is required</span>
+                    }
                 </div>
             </div>
             <div class="d-flex justify-content-center mt-3">
                 <div class="col-5">
                     <label>Email</label>
-                    <input type="email" name="email" class="form-control" [(ngModel)]="supervisor.email" required #email="ngModel">
-                    @if (email.invalid && (email.touched || email.dirty || form.submitted)) {
-                        <span style="color: #ff6e6e;">Field is required</span>
-                        }
+                    <input type="email" name="email" class="form-control" [(ngModel)]="supervisor.email" required
+                        #email="ngModel" email>
+                    @if (email.invalid && (email.touched || email.dirty || isSubmitted)) {
+                    <span style="color: #ff6e6e;">Field is required</span>
+                    }
                 </div>
                 <div class="field col-5">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control" [(ngModel)]="supervisor.password" required #password="ngModel">
-                    @if (password.invalid && (password.touched || password.dirty || form.submitted)) {
-                        <span style="color: #ff6e6e;">Field is required</span>
-                        }
+                    <label>User Name</label>
+                    <input type="text" name="userName" class="form-control" [(ngModel)]="supervisor.userName" required
+                        #userName="ngModel">
+                    @if (userName.invalid && (userName.touched || userName.dirty || isSubmitted)) {
+                    <span style="color: #ff6e6e;">Field is required</span>
+                    }
                 </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <div class=" col-5">
+                    <label>Password</label>
+                    <input [type]="showPassword ? 'text' : 'password'" name="password" class="form-control"
+                        [(ngModel)]="supervisor.password" required #password="ngModel">
+                    @if (password.invalid && (password.touched || password.dirty || isSubmitted)) {
+                    <span style="color: #ff6e6e;">Field is required</span>
+                    }
+                </div>
+                <div class="field col-5">
+                    <label>Confirm Password</label>
+                    <input [type]="showPassword ? 'text' : 'password'" name="confirmPassword" class="form-control"
+                        [disabled]="!supervisor.password" [(ngModel)]="supervisor.confirmPassword" required
+                        #confirmPassword="ngModel">
+                    @if (confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty ||
+                    isSubmitted)) {
+                    <span style="color: #ff6e6e;">Field is required</span>
+                    }
+                    @if (supervisor.confirmPassword && (supervisor.password !== supervisor.confirmPassword)) {
+                    <span style="color: #ff6e6e;">Invalid confirm password.</span>
+                    }
+                </div>
+            </div>
+            <div style="margin:10px 50px ">
+                <input type="checkbox" name="showpassword" class="form-check-input" (change)="showHidePassword()">
+                <label style="margin-left: 10px;">Show Password</label>
             </div>
         </form>
     </div>
 </div>
 <div class="buttons ">
     <button class="btn btn-danger" (click)="cancelForm()">Cancel</button>
-    <button class="btn btn-info"  (click)="saveForm(form)" >Save</button>
+    <button class="btn btn-info" type="submit" (click)=" saveForm(form)">Save</button>
 </div>
 @if (loading) {
-    <div class="spinner-wrapper">
-        <div class="spinner-border text-info" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+<div class="spinner-wrapper">
+    <div class="spinner-border text-info" role="status">
+        <span class="sr-only">Loading...</span>
     </div>
-    }
+</div>
+}

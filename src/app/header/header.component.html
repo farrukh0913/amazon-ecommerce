@@ -28,25 +28,24 @@
           <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="openSocial('https://www.skype.com/')">
             <i class="fa fa-skype"></i>
           </div>
-          
-          @if (!admin.email) {
-            <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="adminLogin()">
-              <i class="fa fa-user"></i>
-            </div>
-          }
-          @if (admin.email) {
-            <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="logout()">
-              <i class="fa fa-sign-out"></i>
-            </div>
-          }
           @if(admin.role === "admin"){
             <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="goToSupervisors()">
               <i class="fa fa-users"></i>
             </div>
           }
-          @if (admin.email) {
+          @if (admin.userName) {
             <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="feedBack()">
               <i class="fa fa-comment"></i>
+            </div>
+          }
+          @if (!admin.userName) {
+            <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="adminLogin()">
+              <i class="fa fa-user"></i>
+            </div>
+          }
+          @if (admin.userName) {
+            <div style="width: 10%; justify-content: center; margin-right: 10px" (click)="logout()">
+              <i class="fa fa-sign-out"></i>
             </div>
           }
         </div>

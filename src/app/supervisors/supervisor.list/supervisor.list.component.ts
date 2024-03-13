@@ -3,6 +3,7 @@ import { SupervisorModel } from '../../model/supervisor';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditSupervisorComponent } from '../add.edit.supervisor/add.edit.supervisor.component';
 import { RequestService } from '../../services/requestService';
+import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-supervisor.list',
@@ -34,7 +35,9 @@ export class SupervisorListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getAllSupervisor();
+      if(result === "save"){
+        this.getAllSupervisor();
+      }
     });
   }
 
@@ -44,5 +47,17 @@ export class SupervisorListComponent implements OnInit {
         this.getAllSupervisor();
       }
     })
+  }
+
+  deleteConfirmation(id:any){
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      disableClose: true
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('result: ', result);
+      if(result === "yes"){
+        this.deleteSupervisor(id)
+      }
+    });
   }
 }

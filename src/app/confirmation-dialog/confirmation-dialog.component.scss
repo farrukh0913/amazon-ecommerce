@@ -1,0 +1,17 @@
+.main-conatiner{
+    height: 130px;
+    width: 400px;
+    margin: 20px;
+}
+
+.container-2{
+    display: flex;
+    justify-content:space-between;
+    color: #fff;
+    .btn-info{
+        margin-right: 10px;
+    }
+    button{
+        color: #fff;
+    }
+}

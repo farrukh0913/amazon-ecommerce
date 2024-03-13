@@ -1,11 +1,14 @@
 <div class="main-conatiner">
 
+    <div class=" text-center heading">
+        <div></div>
+        <h2>{{data?._id? 'Update' : 'Add'}} Product</h2>
+        <i class="fa fa-close" (click)="onNoClick()"></i>
+
+    </div>
     <mat-dialog-content>
         <div>
             <form #form="ngForm">
-                <div class="m-2 text-center">
-                    <h2>{{data?._id? 'Update' : 'Add'}} Product</h2>
-                </div>
                 <div class="d-flex">
                     <div class="col-8">
                         <label>Product Name</label>
@@ -32,21 +35,30 @@
                     <span style="color: #ff6e6e;">Field is required</span>
                     }
                 </div>
-                <div class="pt-2 col-4">
-                    <input type="file" name="image" class="form-control" accept="image/*" required
+                <div class="d-flex justify-content-between">
+
+                    <div class="pt-2 col-4">
+                        <input type="file" name="image" class="form-control" accept="image/*" required
                         (change)="imageBase64($event)">
-                    @if ( form.submitted && !addProduct.image) {
-                    <span style="color: #ff6e6e;">Field is required</span>
-                    }
+                        @if ( form.submitted && !addProduct.image) {
+                            <span style="color: #ff6e6e;">Field is required</span>
+                        }
+                    </div>
+                    <div class="m-2">
+                        <img [src]="addProduct.image" height="100" width="100">
+                    </div>
                 </div>
             </form>
         </div>
 
     </mat-dialog-content>
-    <mat-dialog-actions>
-        <button class="btn btn-danger" (click)="onNoClick()">Cancel</button>
-        <button class="btn btn-info " (click)="addUpdateProduct(form)">Save</button>
-    </mat-dialog-actions>
+    <div class="btns">
+
+        <mat-dialog-actions>
+            <button class="btn btn-danger" (click)="onNoClick()">Cancel</button>
+            <button class="btn btn-info " (click)="addUpdateProduct(form)">Save</button>
+        </mat-dialog-actions>
+    </div>
 </div>
 @if (loading) {
 <div class="spinner-wrapper">

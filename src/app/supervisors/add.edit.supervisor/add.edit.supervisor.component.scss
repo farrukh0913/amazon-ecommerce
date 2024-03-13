@@ -11,15 +11,25 @@
         color: #444;
         padding: 8px;
         background: #ebebeb;
+        display: flex;
+        justify-content: space-between;
+        .fa-close {
+            margin: 7px;
+            font-size: 20px;
+            cursor: pointer;
+        }
     }
     .field{
         margin-left: 30px;
     }
 }
 .buttons{
-    margin: 20px 70px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    color: #444;
+    background: #ebebeb;
     button{
         color: #fff;
-        margin-right: 20px;
     }
 }
