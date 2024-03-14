@@ -17,7 +17,7 @@ export class AdminLoginComponent {
     private requestService: RequestService) { }
 
   appLogin(form: any) {
-    if(form.valid){
+    if(form.valid && form.value.role){
       this.requestService.adminLogin(form.value).subscribe(res => {
         if (res) {
           localStorage.setItem("admin", JSON.stringify(res.data));

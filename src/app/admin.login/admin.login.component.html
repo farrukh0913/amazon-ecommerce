@@ -56,12 +56,13 @@
                     <label>Role</label>
                     <select class="form-select" aria-label="Default select example" name="role" #role="ngModel"
                         [(ngModel)]="login.role">
-                        <option disabled>Please select your role</option>
+                        <option selected="true" value="" disabled>Please select your role</option>
                         <option value="admin">Admin</option>
                         <option value="supervisor">Supervisor</option>
                     </select>
-                    @if (role.invalid && (role.touched || role.dirty || form.submitted)) {
+                    @if (!login.role && (role.touched || role.dirty || form.submitted)) {
                         <span style="color: #ff6e6e;">Role is required</span>
+                        <span style="color: #ff6e6e;">{{role.invalid}}</span>
                         }
                 </div>
                 <div class="pt-3 pb-3">

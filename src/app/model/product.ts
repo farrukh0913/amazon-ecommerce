@@ -1,6 +1,6 @@
 export class AddProduct {
     productName: string = '';
     price: number = 0;
-    discription: string = '';
+    description: string = '';
     image: any;
 }

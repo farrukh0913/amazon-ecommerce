@@ -20,7 +20,7 @@ export class AddEditProductsComponent {
     if (data) {
       this.addProduct = {
         productName: data.productName,
-        discription: data.discription,
+        description: data.description,
         price: data.price,
         image: data.image
       }

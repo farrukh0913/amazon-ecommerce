@@ -5,11 +5,15 @@
 }
 
 .container-2{
-    display: flex;
-    justify-content:space-between;
     color: #fff;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 10px;
     .btn-info{
-        margin-right: 10px;
+        // margin-right: 10px;
     }
     button{
         color: #fff;

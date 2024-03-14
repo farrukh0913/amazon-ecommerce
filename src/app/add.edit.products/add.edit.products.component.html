@@ -9,7 +9,7 @@
     <mat-dialog-content>
         <div>
             <form #form="ngForm">
-                <div class="d-flex">
+                <div class="d-flex content">
                     <div class="col-8">
                         <label>Product Name</label>
                         <input type="text" name="productName" class="form-control" [(ngModel)]="addProduct.productName"
@@ -18,7 +18,7 @@
                         <span style="color: #ff6e6e;">Field is required</span>
                         }
                     </div>
-                    <div class="col-3 ml-2" style="margin-left: 60px;">
+                    <div class="col-3 ml-2" >
                         <label>Price</label>
                         <input type="number" name="price" class="form-control" [(ngModel)]="addProduct.price"
                             #price="ngModel" required>
@@ -27,27 +27,34 @@
                         }
                     </div>
                 </div>
-                <div>
-                    <label>Discription</label>
-                    <textarea name="discription" class="form-control" cols="20" rows="4"
-                        [(ngModel)]="addProduct.discription" #discription="ngModel" required></textarea>
-                    @if (discription.invalid && (discription.touched || discription.dirty || form.submitted)) {
+                <div class="container-3 content">
+                <div class="description col-8">
+                    <label>Description</label>
+                    <textarea name="description" class="form-control " cols="80" rows="6"
+                        [(ngModel)]="addProduct.description" #description="ngModel" required></textarea>
+                    @if (description.invalid && (description.touched || description.dirty || form.submitted)) {
                     <span style="color: #ff6e6e;">Field is required</span>
                     }
                 </div>
-                <div class="d-flex justify-content-between">
+                <div class="image-container">
+                    <div class=" p-image">
+                        @if(addProduct.image){
+                            <img [src]="addProduct.image" height="150" width="180">
+                        } @else {
+                            <i class="fa fa-file-image-o"></i>
 
-                    <div class="pt-2 col-4">
-                        <input type="file" name="image" class="form-control" accept="image/*" required
+                        }
+                    </div>
+                    <div class="pt-2 ">
+                        <input type="file" name="image" class="form-control select-image" accept="image/*" required
                         (change)="imageBase64($event)">
                         @if ( form.submitted && !addProduct.image) {
                             <span style="color: #ff6e6e;">Field is required</span>
                         }
                     </div>
-                    <div class="m-2">
-                        <img [src]="addProduct.image" height="100" width="100">
-                    </div>
+                    
                 </div>
+            </div>
             </form>
         </div>
 
