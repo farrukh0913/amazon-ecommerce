@@ -96,6 +96,7 @@
   }
   .selected {
     border-bottom: 3px solid #00afd1;
+    color: #00afd1 !important;
 
 }
 .umar{
@@ -103,5 +104,8 @@
     bottom: 65px;
     z-index: 9999;
     background-color: #f8f8f8;
+}
+.icon-selected{
+  color: #00afd1 !important;
 }
 }

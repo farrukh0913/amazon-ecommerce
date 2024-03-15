@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -32,7 +32,8 @@ export class HeaderComponent {
       path: "whatwedo"
     },
   ];
-  constructor(private router: Router) {
+  constructor(private router: Router,private route: ActivatedRoute) {
+
     this.admin = JSON.parse(localStorage.getItem("admin") || '[]')
   }
   slectedValue(value: any) {
@@ -55,10 +56,12 @@ export class HeaderComponent {
   }
 
   goToSupervisors() {
+    this.selectedItem = "supervisorList";
     this.router.navigate(['supervisorList']);
   }
 
   feedBack(){
+    this.selectedItem = "feedBack";
     this.router.navigate(['feedBack']); 
   }
 }

@@ -30,6 +30,9 @@
         .footer-widgets-popular{
             width: 33%;
             padding-left: 10%;
+            ul{
+                padding: 0;
+            }
             ul li{
                 list-style: none;
                 margin-bottom:4px ; 
@@ -37,6 +40,9 @@
         }
         .footer-widgets-info{
             width: 33%;
+            ul{
+                padding: 0;
+            }
             ul li{
                 list-style: none;
                 margin-bottom: 12px;
