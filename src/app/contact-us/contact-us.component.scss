@@ -1,74 +1,167 @@
 .main-container {
-    margin-top: 100px;
+  margin-top: 100px;
 
-    .aboutus {
-        width: 100%;
-        background-color: lightgray;
-        height: 130px;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+  .aboutus {
+    width: 100%;
+    background-color: lightgray;
+    height: 130px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-        h2 {
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 22px;
-            line-height: 28px;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 600;
-            margin: 0;
-            color: #444;
-        }
-
-        p {
-            font-weight: 300;
-            color: #888;
-            margin-top: 10px;
-            font-size: 13px;
-            font-family: 'Open Sans', sans-serif;
-            line-height: 22px;
-        }
+    h2 {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 22px;
+      line-height: 28px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      margin: 0;
+      color: #444;
     }
 
-    .contanier {
-        padding: 3% 0;
+    p {
+      font-weight: 300;
+      color: #888;
+      margin-top: 10px;
+      font-size: 13px;
+      font-family: "Open Sans", sans-serif;
+      line-height: 22px;
     }
+  }
 
+  .contanier {
+    padding: 3% 0;
+  }
+
+  .mainform {
+    width: 100%;
     .contact {
-        padding: 3% 0 0 10%;
+      padding: 3% 0 0 10%;
+      .fields {
+        margin-left: 35px;
+      }
 
+      button {
+        color: #fff;
+      }
+    }
+  }
+
+  .info {
+    padding-top: 3%;
+  }
+
+  .widgets-info {
+    div {
+      list-style: none;
+      margin-bottom: 12px;
+      color: #888;
+    }
+
+    span {
+      font-weight: 500;
+      color: #888;
+    }
+  }
+
+  .working-time {
+    div {
+      color: #888;
+    }
+
+    span {
+      font-weight: 500;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-container {
+    .aboutus {
+      h2 {
+        font-weight: 800;
+      }
+      p {
+
+        text-align: center;
+        margin: 4px 36px;
+        font-size: 16px;
+    
+      }
+    }
+    .mainform {
+      .contact {
+        h2 {
+          font-size: 26px;
+          font-weight: 700;
+          margin-top: 10px;
+          margin-left: -10px;
+        }
+        label {
+          font-size: 21px;
+          margin-top: 12px;
+          margin-bottom: 10px;
+        }
+        .form-control {
+          width: 116%;
+          font-size: 2rem;
+          border: 1px solid #c5c5c5;
+        }
+        .fields {
+          margin-left: 0px;
+          margin-top: 20px;
+        }
+        textarea {
+          width: 137% !important;
+        }
         button {
-            color: #fff;
+          width: 50%;
+          font-size: 17px;
+          height: 56px;
         }
+      }
+      .info {
+        margin-top: 10px;
+        h2 {
+          font-size: 26px;
+          font-weight: 700;
+          margin-top: 10px;
+          margin-left: 14px;
+        }
+        p {
+          font-size: 18px;
+          text-align: justify;
+          margin-right: 10px;
+          margin-left: 14px;
+        }
+        .widgets-info {
+          margin-left: 14px;
+          div {
+            font-size: 18px;
+          }
+          span {
+            font-size: 20px;
+          }
+        }
+
+        .working-time {
+          margin-left: 14px;
+          margin-top: 30px;
+          margin-bottom: 18px;
+          h2 {
+            margin-left: 0px;
+          }
+          div {
+            font-size: 18px;
+          }
+          span {
+            font-size: 20px;
+          }
+        }
+      }
     }
-
-    .info {
-        padding-top: 3%;
-
-    }
-
-    .widgets-info {
-        div {
-            list-style: none;
-            margin-bottom: 12px;
-            color: #888;
-        }
-
-        span {
-            font-weight: 500;
-            color: #888;
-        }
-    }
-
-    .working-time {
-        div {
-            color: #888;
-        }
-
-        span {
-            font-weight: 500;
-        }
-    }
+  }
 }

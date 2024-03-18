@@ -20,7 +20,7 @@
         text-transform: uppercase;
         font-size: 22px;
         line-height: 28px;
-        font-family: 'Open Sans', sans-serif;
+        font-family: "Open Sans", sans-serif;
         font-weight: 600;
         margin: 0;
         color: #444;
@@ -31,17 +31,16 @@
         color: #888;
         margin-top: 10px;
         font-size: 13px;
-        font-family: 'Open Sans', sans-serif;
+        font-family: "Open Sans", sans-serif;
         line-height: 22px;
       }
     }
   }
-
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap");
 
-$firaSans: 'Fira Sans', sans-serif;
+$firaSans: "Fira Sans", sans-serif;
 
 html {
   box-sizing: border-box;
@@ -83,7 +82,6 @@ h5 {
   margin-bottom: 0;
 }
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -92,12 +90,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  color: #1F1D42;
-  background-color: #F0F8E1;
+  color: #1f1d42;
+  background-color: #f0f8e1;
 }
-.product-container{
-  
-  margin:60px 120px !important;
+.product-container {
+  margin: 60px 120px !important;
 }
 .card {
   height: 350px;
@@ -126,15 +123,15 @@ body {
     .fa-trash {
       color: #888;
       cursor: pointer;
-      &:hover{
-        color: rgb(183, 12, 12); ;
+      &:hover {
+        color: rgb(183, 12, 12);
       }
     }
     .fa-pencil-square {
       color: #888;
       cursor: pointer;
-      &:hover{
-        color: #00afd1 ;
+      &:hover {
+        color: #00afd1;
       }
     }
   }
@@ -143,8 +140,133 @@ body {
     margin: 5px 0;
     overflow: hidden;
   }
-  .price{
+  .price {
     color: #444;
   }
+}
 
+@media only screen and (max-width: 390px) and (min-width: 375px) {
+  .main-conatiner {
+    .content {
+      .aboutus {
+        h2 {
+          font-weight: 800;
+        }
+        p {
+          text-align: center;
+          margin: 4px 36px;
+          font-size: 16px;
+        }
+      }
+      .product-container {
+        width: 245px;
+        .card {
+          margin-left: -54px;
+          .card-body {
+            a {
+              font-size: 24px;
+            }
+            h2 {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 391px) and (max-width: 430px) {
+  .main-conatiner {
+    .content {
+      .aboutus {
+        h2 {
+          font-weight: 800;
+        }
+        p {
+          text-align: center;
+          margin: 4px 36px;
+          font-size: 16px;
+        }
+      }
+      .product-container {
+        width: 280px;
+        .card {
+          margin-left: -54px;
+          .card-body {
+            a {
+              font-size: 24px;
+            }
+            h2 {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 374px) {
+  .main-conatiner {
+    .content {
+      .aboutus {
+        h2 {
+          font-weight: 800;
+        }
+        p {
+          text-align: center;
+          margin: 4px 36px;
+          font-size: 16px;
+        }
+      }
+      .product-container {
+        width: 230px;
+        .card {
+          margin-left: -54px;
+          .card-body {
+            a {
+              font-size: 25px;
+            }
+            h2 {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 700px) and (max-width: 768px) {
+  .main-conatiner {
+    .content {
+      .aboutus {
+        h2 {
+          font-weight: 800;
+        }
+        p {
+          text-align: center;
+          margin: 4px 36px;
+          font-size: 16px;
+        }
+      }
+      .product-container {
+        width: 639px;
+        .card {
+          margin-left: -54px;
+          .card-body {
+            a {
+              font-size: 24px;
+            }
+            h2 {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
