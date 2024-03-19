@@ -3,13 +3,13 @@
         <h2>Feed Back</h2>
     </div>
     <div class="container">
-        <table class="table table-striped col-8">
+        <table class="table table-striped col-12">
             <thead>
               <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Website</th>
-                <th scope="col">Comment</th>
+                <th class="comment" scope="col">Comment</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -19,7 +19,7 @@
                         <td>{{feedback.name}}</td>
                         <td>{{feedback.email}}</td>
                         <td>{{feedback.website}}</td>
-                        <td>{{feedback.comment}}</td>
+                        <td >{{feedback.comment}}</td>
                         <td><i class="fa fa-trash" (click)="deleteFeedback(feedback._id)"></i></td>
                     </tr>
                 }
