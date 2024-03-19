@@ -1,31 +1,38 @@
 <div class="main-conatiner">
-    <div class="aboutus">
-        <h2>Product Details</h2>
+  <div class="aboutus">
+    <h2>Product Details</h2>
+    <p>
+      We Offer You Our Portfolio And Our Clients, Who Always Proud Of Them, And
+      We Hope To Obtain Admire.
+    </p>
+  </div>
+  @if (loading) {
+  <div class="spinner-wrapper">
+    <div class="spinner-border text-info" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  } @else {
+  <div class="details-main d-flex">
+    <div class="contain row">
+      <div class="image col-12 col-lg-8">
+        <img [src]="product.image" alt="" />
+      </div>
+      <div class="details col-12 col-lg-4">
+        <h1 class="product-name">{{ product.productName }}</h1>
+        <h3>Discription</h3>
         <p>
-            We Offer You Our Portfolio And Our Clients, Who Always Proud Of Them,
-            And We Hope To Obtain Admire.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sit quis
+          dolores amet doloribus dolorem omnis voluptatum perspiciatis ad, saepe
+          unde aspernatur quas harum beatae, voluptate et eum. Necessitatibus,
+          atque!
         </p>
+         <p>{{product.discription}}</p> 
+        <h3 class="price">Rs: {{ product.price }}</h3>
+        <button class="btn btn-info">Buy Now</button>
+      </div>
     </div>
-    @if (loading) {
-    <div class="spinner-wrapper">
-        <div class="spinner-border text-info" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    } @else {
-    <div class="details-main d-flex ">
-        <div class="contain">
-            <div class="image">
-                <img [src]="product.image" alt="">
-            </div>
-            <div class="details">
-                <h1 class="product-name">{{product.productName}}</h1>
-                <h3>Discription</h3>
-                <p>{{product.discription}}</p>
-                <h3 class="price">Rs: {{product.price}}</h3>
-                <button class="btn btn-info">Buy Now</button>
-            </div>
-        </div>
-    </div>
-    }
+    
+  </div>
+  }
 </div>

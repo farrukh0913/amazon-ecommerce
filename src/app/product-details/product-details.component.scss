@@ -1,70 +1,116 @@
 .main-conatiner {
-    margin-top: 100px;
-    background: #f2f2f2;
+  margin-top: 100px;
+  background: #f2f2f2;
 
+  .aboutus {
+    width: 100%;
+    background-color: lightgray;
+    height: 130px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 22px;
+      line-height: 28px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      margin: 0;
+      color: #444;
+    }
+
+    p {
+      font-weight: 300;
+      color: #888;
+      margin-top: 10px;
+      font-size: 13px;
+      font-family: "Open Sans", sans-serif;
+      line-height: 22px;
+    }
+  }
+
+  .details-main {
+    .contain {
+      background: #fff;
+      margin: 30px 120px !important;
+      display: flex;
+      padding: 50px;
+      .details {
+        padding: 0px 65px !important;
+
+        .product-name {
+          font-size: 20px;
+          font-weight: 500;
+          color: #444;
+        }
+
+        .price {
+          font-size: 30px;
+          font-weight: 600;
+          color: #444;
+        }
+
+        button {
+          color: #fff;
+        }
+      }
+
+      image {
+        img {
+          height: 240px;
+          width: 240px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .main-conatiner {
     .aboutus {
-        width: 100%;
-        background-color: lightgray;
-        height: 130px;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        h2 {
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 22px;
-            line-height: 28px;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 600;
-            margin: 0;
-            color: #444;
-        }
-
-        p {
-            font-weight: 300;
-            color: #888;
-            margin-top: 10px;
-            font-size: 13px;
-            font-family: 'Open Sans', sans-serif;
-            line-height: 22px;
-        }
+      height: 160px !important;
+      h2 {
+        font-weight: 800;
+      }
+      p {
+        text-align: center;
+        margin: 4px 36px;
+        font-size: 12px;
+      }
     }
-
     .details-main {
-        .contain {
-            background: #fff;
-            margin: 30px 120px !important;
-            display: flex;
-            padding: 50px;
-            .details {
-                padding: 0px 65px !important;
-
-                .product-name {
-                    font-size: 20px;
-                    font-weight: 500;
-                    color: #444;
-                }
-
-                .price {
-                    font-size: 30px;
-                    font-weight: 600;
-                    color: #444;
-                }
-
-                button {
-                    color: #fff;
-                }
-            }
-
-            image {
-                height: auto;
-                width: auto;
-            }
+     margin-left: -85px;
+    
+      .contain {
+        padding: 0px;
+        .image {
+          img {
+            width: 305px;
+            height: 322px;
+          }
         }
+        .details {
+            h3 {
+              font-size: 23px;
+            }
+            .product-name {
+              font-size: 27px !important;
+              margin-top: 18px;
+            }
+            button {
+              color: #fff;
+              margin-bottom: 16px;
+              font-size: 22px;
+              width: 120px;
+            }
+          }
+      }
 
+      
     }
-
+  }
 }

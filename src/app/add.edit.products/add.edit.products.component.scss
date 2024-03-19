@@ -1,82 +1,160 @@
 .main-conatiner {
-    height: 450px;
-    width: 800px;
-    overflow: hidden;
+  height: 450px;
+  width: 800px;
+  overflow: hidden;
 
-    mat-dialog-actions {
-        display: flex;
-        justify-content: space-between;
-
-        .btn {
-            color: #fff;
-            margin-left: 10px;
-        }
-    }
-.content{
+  mat-dialog-actions {
     display: flex;
     justify-content: space-between;
+
+    .btn {
+      color: #fff;
+      margin-left: 10px;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .heading {
+    width: 100%;
+    height: 12%;
+    color: #444;
+    padding: 8px;
+    background: #ebebeb;
+    display: flex;
+    justify-content: space-between;
+
+    .fa-close {
+      margin: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .btns {
+    color: #444;
+    background: #ebebeb;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .container-3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      .p-image {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        border: solid 2px #444;
+        border-style: dashed;
+        height: 155px;
+        width: 185px;
+        .fa-file-image-o {
+          text-align: center;
+          font-size: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+      .select-image {
+        width: 109px;
+      }
+    }
+  }
 }
+
+@media only screen and (max-width: 540px) {
+  .main-conatiner {
+    width: 293px;
+    overflow: auto;
+    .content {
+      label {
+        font-size: 18px;
+      }
+    }
     .heading {
-        width: 100%;
-        height: 12%;
-        color: #444;
-        padding: 8px;
-        background: #ebebeb;
-        display: flex;
-        justify-content: space-between;
-
-        .fa-close {
-            margin: 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
+      width: 100%;
+      h2 {
+        font-weight: bold;
+      }
     }
 
+    .form-control {
+      display: block;
+      width: 94%;
+    }
     .btns {
-        color: #444;
-        background: #ebebeb;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+      position: relative;
+      width: 100%;
     }
-
     .container-3 {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        .image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-            .p-image {
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                flex-direction: column;
-                border: solid 2px #444;
-                border-style: dashed;
-                height: 155px;
-                width: 185px;
-                .fa-file-image-o{
-                    text-align: center;
-                    font-size: 40px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                }
-            }
-            .select-image {
-                width: 109px;
-            }
-        }
+      .image-container {
+        margin-left: 2px;
+      }
     }
+  }
 }
 
-@media only screen and (min-width: 375px) and (max-width: 390px)  {
-    .main-conatiner{
-        height: 100px;
-        width: 80px;
-        overflow: hidden;
+@media only screen and (min-width: 541px) and (max-width: 1028px) {
+  .main-conatiner {
+    width: 582px;
+    overflow: auto;
+    .content {
+      label {
+        font-size: 22px;
+      }
     }
+    .heading {
+      width: 100%;
+      h2 {
+        font-weight: bold;
+      }
+    }
+
+    .form-control {
+      display: block;
+      width: 99%;
+    }
+    .btns {
+      position: relative;
+      width: 100%;
+    }
+    .container-3 {
+      .image-container {
+        margin-left: 2px;
+      }
+    }
+  }
+}
+
+@media only screen and (width: 1024px) and (height: 600px) {
+  .main-conatiner {
+    margin-top: 50px;
+    .content {
+      label {
+        font-size: 22px;
+      }
+    }
+
+    .heading {
+      h2 {
+        font-weight: bold;
+      }
+    }
+    .container-3 {
+      .image-container {
+        margin-left: 0px;
+      }
+    }
+  }
 }

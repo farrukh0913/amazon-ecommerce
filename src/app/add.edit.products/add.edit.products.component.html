@@ -9,8 +9,8 @@
     <mat-dialog-content>
         <div>
             <form #form="ngForm">
-                <div class="d-flex content">
-                    <div class="col-8">
+                <div class="d-flex content row">
+                    <div class="col-12 col-lg-8">
                         <label>Product Name</label>
                         <input type="text" name="productName" class="form-control" [(ngModel)]="addProduct.productName"
                             #productName="ngModel" required>
@@ -18,7 +18,7 @@
                         <span style="color: #ff6e6e;">Field is required</span>
                         }
                     </div>
-                    <div class="col-3 ml-2">
+                    <div class="col-12 col-lg-4 ml-2">
                         <label>Price</label>
                         <input type="number" name="price" class="form-control" [(ngModel)]="addProduct.price"
                             #price="ngModel" required>
@@ -27,8 +27,8 @@
                         }
                     </div>
                 </div>
-                <div class="container-3 content">
-                    <div class="description col-8">
+                <div class="container-3 content row">
+                    <div class="description col-12 col-lg-8">
                         <label>Description</label>
                         <textarea name="description" class="form-control " cols="80" rows="6"
                             [(ngModel)]="addProduct.description" #description="ngModel" required></textarea>
@@ -36,8 +36,9 @@
                         <span style="color: #ff6e6e;">Field is required</span>
                         }
                     </div>
-                    <div class="image-container">
-                        <div class=" p-image">
+                    <div class="image-container col-12 col-lg-4 ">
+                       
+                        <div class=" p-image ">
                             @if(addProduct.image){
                             <img [src]="addProduct.image" height="150" width="180">
                             } @else {
@@ -52,7 +53,7 @@
                             <span style="color: #ff6e6e;">Field is required</span>
                             }
                         </div>
-
+                  
                     </div>
                 </div>
             </form>
