@@ -60,16 +60,16 @@
   }
 }
 
-@media only screen and (max-width: 375px)  {
+@media only screen and (max-width: 391px)  {
   .main-container {
     .aboutus {
       h2 {
-        font-weight: 800;
+        font-weight: 700;
       }
       p {
         text-align: center;
-        margin: 4px 36px;
-        font-size: 16px;
+        margin: 4px 10px;
+        font-size: 12px;
       }
     }
     .main {
@@ -101,57 +101,16 @@
   }
 }
 
-@media only screen and (min-width: 376px) and (max-width: 390px) {
-  .main-container {
-    .aboutus {
-      h2 {
-        font-weight: 800;
-      }
-      p {
-        text-align: center;
-        margin: 4px 36px;
-        font-size: 16px;
-      }
-    }
-    .main {
-      img {
-        float: none;
-        width: 347px;
-        height: 256px;
-        margin-left: -181px;
-        padding: 4px;
-        border: 1px solid rgba(221, 221, 221, 0.8666666667);
-      }
-
-      h2 {
-        font-size: 26px;
-        width: 302px;
-        margin-left: -151px;
-        margin-bottom: 18px;
-        margin-top: 24px;
-        font-weight: 700;
-      }
-      p {
-        font-size: 18px;
-        text-align: justify;
-        margin-top: 34px;
-        width: 332px;
-        margin-left: -169px;
-      }
-    }
-  }
-}
-
 @media only screen and (min-width: 391px) and (max-width: 430px) {
   .main-container {
     .aboutus {
       h2 {
-        font-weight: 800;
+        font-weight: 700;
       }
       p {
         text-align: center;
-        margin: -4px 36px;
-        font-size: 16px;
+        margin: 4px 10px;
+        font-size: 12px;
       }
     }
     .main {
@@ -187,12 +146,12 @@
   .main-container {
     .aboutus {
       h2 {
-        font-weight: 800;
+        font-weight: 700;
       }
       p {
         text-align: center;
-        margin: 4px 36px;
-        font-size: 16px;
+        margin: 4px 10px;
+        font-size: 12px;
       }
     }
     .main {

@@ -98,12 +98,7 @@
   border-bottom: 3px solid #00afd1;
   color: #00afd1 !important;
 }
-.umar {
-  position: absolute;
-  bottom: 65px;
-  z-index: 9999;
-  background-color: #f8f8f8;
-}
+
 .icon-selected {
   color: #00afd1 !important;
 }
@@ -167,10 +162,10 @@
 @media only screen and (max-width: 430px) {
   .main-conatiner {
     .navbar {
+      display: flex;
+      flex-direction: row;
       .navbar-section1 {
-        height: 45px;
         width: 82%;
-        margin-left: -64px;
         border-bottom: 0px;
         .section1-content {
           display: flex;
@@ -198,9 +193,9 @@
       }
 
       .navbar-section2 {
-        margin-top: 25px;
-        background-color: #aaaaaa;
-        margin-left: -273px;
+        // margin-top: 25px;
+        background-color: #e4e4e4;
+        // margin-left: -273px;
         .section2-content {
           .section {
             width: 100%;
