@@ -106,11 +106,7 @@
 @media only screen and (min-width: 726px) {
   .main-conatiner {
     .navbar {
-      // .navbar-section1 {
-      //   .section1-content {
-
-      //   }
-      // }
+     
       .navbar-section2 {
         .section2-content {
           .section {
@@ -145,6 +141,19 @@
 @media only screen and (max-width: 650px) {
   .main-conatiner {
     .navbar {
+.navbar-section1{
+  .section1-content{
+    .mobile-screen{
+      display: none;
+    }
+    .menu-icon{
+      width: 100%;
+      display: flex;
+      justify-content: space-around !important;
+    }
+  }
+}
+
       .navbar-section2 {
         .section2-content {
           .section {
