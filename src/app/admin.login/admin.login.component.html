@@ -1,5 +1,5 @@
 <div class="main-conatiner">
-    <div class="wrapper-contaciner">
+    <div class="wrapper-container">
         <div class="container-1">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -35,7 +35,9 @@
         </div>
         <div class="container-2 ">
             <form #form="ngForm" class="inner-container">
-                <label class="login-header">Admin Login</label>
+                <div class="heading">
+                    <label class="login-header">Admin Login</label>
+                </div>
                 <div class=" pt-5">
                     <label>User Name</label>
                     <input type="text" [(ngModel)]="login.userName" name="userName" class="form-control" #userName="ngModel"

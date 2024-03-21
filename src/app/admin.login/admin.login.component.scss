@@ -3,330 +3,113 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  .wrapper-contaciner {
-    height: 100vh;
-    width: 100vw;
+  align-items: center;
+  justify-content: center;
+
+  .wrapper-container {
+    width: 1000px;
+    height: 500px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    top: 0;
-    left: 0;
-    margin: 0 150px;
+
   }
+
   .container-1 {
-    width: 50%;
-    height: 60%;
-    display: flex;
+    height: 400px;
+    width: 510px;
   }
+
+  .heading {
+    text-align: center;
+  }
+
   .container-2 {
     background: #fff;
-    width: 50%;
-    height: 70%;
-    margin-top: 57px;
+    width: 600px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #888;
+
     .inner-container {
       width: 50%;
     }
+
     button {
       color: #fff;
       margin-right: 20px;
     }
+
     .login-header {
       text-align: center;
       font-size: 20px;
     }
   }
+
+  .carousel-inner {
+    height: 400px;
+  }
+
   .d-block {
     height: 422px !important;
   }
 }
 
-@media only screen and (max-width: 375px) {
-  .wrapper-contaciner {
-    margin: 0 !important;
+@media only screen and (max-width: 500px) {
+  .container-1 {
+    display: none !important;
+  }
 
-    .container-1 {
-      display: none !important;
+  .inner-container {
+    width: 80% !important;
+  }
+
+  .wrapper-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .container-2 {
+    height: 70%;
+    width: 100% !important;
+    margin: 0 45px;
+
+    .login-header {
+      font-size: 28px;
+      margin-top: 18px;
+      font-weight: bold;
     }
-    .container-2 {
-      height: 70%;
-      width: 100% !important;
-      .login-header {
-        font-size: 28px;
-        margin-top: 18px;
-        font-weight: bold;
-      }
-      label {
-        font-size: 21px;
-      }
 
-      button {
-        width: 73px;
-        font-size: 15px;
-        height: 47px;
-      }
+    .heading {
+      text-align: center;
+    }
+
+    label {
+      font-size: 21px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      width: 73px;
+      font-size: 15px;
+      height: 47px;
+      margin: 0 !important;
+
     }
   }
+
 }
 
-@media only screen and (max-width: 600px) and (min-width: 376px) {
-  .wrapper-contaciner {
-    margin: 0 !important;
-
-    .container-1 {
-      display: none !important;
+@media only screen and (min-width:501px) and (max-width: 1000px) {
+  .main-conatiner{
+    .wrapper-container{
+      scale: .7;
     }
-    .container-2 {
-      height: 70%;
-      width: 100% !important;
-      .login-header {
-        font-size: 26px;
-        font-weight: bold;
-      }
-      label {
-        font-size: 18px;
-        margin-bottom: 12px;
-      }
-
-      button {
-        margin-top: 17px;
-        width: 202px;
-        height: 53px;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 852px) {
-  .main-conatiner {
-    .wrapper-contaciner {
-      height: 95vh;
-      margin: 44px !important;
-    }
-    .container-1 {
-      display: none !important;
-    }
-    .container-2 {
-      height: 65%;
-      margin-top: -75px;
-      width: 100% !important;
-      .login-header {
-        font-size: 28px;
-        font-weight: bold;
-      }
-      label {
-        font-size: 21px;
-        margin-bottom: 12px;
-      }
-      .form-control,
-      .form-select {
-        height: 55px;
-      }
-      button {
-        margin-top: 17px;
-        width: 139px;
-        font-size: 18px;
-        height: 55px;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 853px) and (max-width: 910px) {
-  .main-conatiner {
-    .wrapper-contaciner {
-      height: 95vh;
-      margin: 44px !important;
-    }
-    .container-1 {
-      display: none !important;
-    }
-    .container-2 {
-      height: 65%;
-      margin-top: -188px;
-      width: 100% !important;
-      .login-header {
-        font-size: 28px;
-        font-weight: bold;
-      }
-      label {
-        font-size: 21px;
-        margin-bottom: 12px;
-      }
-      .form-control,
-      .form-select {
-        height: 55px;
-      }
-      button {
-        margin-top: 17px;
-        width: 139px;
-        font-size: 18px;
-        height: 55px;
-      }
-    }
-  }
-}
-@media only screen and (min-width: 912px) and (max-width: 1000px) {
-  .main-conatiner {
-    .wrapper-contaciner {
-      height: 95vh;
-      margin: 44px !important;
-    }
-    .container-1 {
-      display: none !important;
-    }
-    .container-2 {
-      height: 65%;
-      margin-top: -255px;
-      width: 100% !important;
-      .login-header {
-        font-size: 28px;
-        font-weight: bold;
-      }
-      label {
-        font-size: 21px;
-        margin-bottom: 12px;
-      }
-      .form-control,
-      .form-select {
-        height: 55px;
-      }
-      button {
-        margin-top: 17px;
-        width: 139px;
-        font-size: 18px;
-        height: 55px;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 1001px) and (max-width: 1023px) {
-  .main-conatiner {
-    .wrapper-contaciner {
-      height: 95vh;
-      margin: 44px !important;
-      .container-1 {
-        height: 52%;
-      }
-
-      .container-2 {
-        width: 50% !important;
-        height: 33%;
-        margin-top: -252px;
-        .login-header {
-          font-size: 28px;
-          margin-top: 18px;
-          font-weight: bold;
-        }
-        label {
-          font-size: 21px;
-        }
-
-        button {
-          width: 97px;
-          font-size: 18px;
-          height: 47px;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (width: 1024px) and (height: 600px) {
-  .main-conatiner {
-    .wrapper-contaciner {
-      height: 95vh;
-      margin: 44px !important;
-      .container-1 {
-        height: 83%;
-      }
-
-      .container-2 {
-        width: 50% !important;
-        height: 75%;
-        margin-top: -50px;
-        .login-header {
-          font-size: 28px;
-          margin-top: 18px;
-          font-weight: bold;
-        }
-        label {
-          font-size: 21px;
-        }
-
-        button {
-          width: 97px;
-          font-size: 18px;
-          height: 47px;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1200px) {
-  .main-conatiner {
-    .wrapper-contaciner {
-      height: 95vh;
-      margin: 44px !important;
-    }
-
-    .container-2 {
-      height: 29%;
-      margin-top: -437px;
-      .login-header {
-        font-size: 28px;
-        margin-top: 18px;
-        font-weight: bold;
-      }
-      label {
-        font-size: 21px;
-      }
-
-      button {
-        width: 97px;
-        font-size: 18px;
-        height: 47px;
-      }
-    }
-  }
-  .d-block {
-    height: 448px !important;
-  }
-}
-
-@media only screen and (min-width: 1201px) and (max-width: 1280px) {
-  .main-conatiner {
-    .wrapper-contaciner {
-      height: 95vh;
-      margin: 44px !important;
-    }
-
-    .container-2 {
-      height: 56%;
-      margin-top: -33px;
-      width: 50% !important;
-      .login-header {
-        font-size: 28px;
-        margin-top: 18px;
-        font-weight: bold;
-      }
-      label {
-        font-size: 21px;
-      }
-
-      button {
-        width: 97px;
-        font-size: 18px;
-        height: 47px;
-      }
-    }
-  }
-  .d-block {
-    height: 490px !important;
   }
 }

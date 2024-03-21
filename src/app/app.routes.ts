@@ -50,7 +50,8 @@ export const routes: Routes = [
     },
     {
         path: 'feedBack',
-        component: FeedBackComponent
+        component: FeedBackComponent,
+        canActivate: [AuthGuard],
     }
     
     
