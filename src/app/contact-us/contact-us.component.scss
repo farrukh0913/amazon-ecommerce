@@ -46,6 +46,9 @@
 
       button {
         color: #fff;
+        margin-bottom: 18px;
+        height: 43px;
+    
       }
     }
   }
@@ -161,6 +164,17 @@
             font-size: 20px;
           }
         }
+      }
+    }
+  }
+}
+
+
+@media only screen and (width:1024px) and (height:600px){
+  .main-container{
+    .mainform{
+      .info{
+        margin-bottom: 10px;
       }
     }
   }

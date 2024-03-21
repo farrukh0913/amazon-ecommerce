@@ -24,7 +24,7 @@
           span {
             font-size: 12px !important;
           }
-          width: 45%;
+          width: 50%;
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -109,7 +109,16 @@
 @media only screen and (min-width: 726px) {
   .main-conatiner {
     .navbar {
-     
+      .navbar-section1{
+        .section1-content{
+          
+          .rows{
+            div{
+              width: 45%;
+            }
+          }
+        }
+      }
       .navbar-section2 {
         .section2-content {
           .section {
@@ -209,8 +218,15 @@
         background-color: #e4e4e4;
         // margin-left: -273px;
         .section2-content {
+          .logo{
+            width: 14%;
+          }
           .section {
             width: 100%;
+            div{
+              font-size: 11px !important;
+              font-weight: bold;
+            }
             div {
               font-size: xx-small;
             }

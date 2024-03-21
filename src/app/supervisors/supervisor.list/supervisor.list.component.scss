@@ -48,7 +48,31 @@
     }
 }
 @media only screen and (min-width: 350px) and (max-width: 500px)  {
+
+
+    ::-webkit-scrollbar {
+        height: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+       
+      
+      ::-webkit-scrollbar-thumb {
+        background:  #c7c7c7; 
+      }
+      
+    
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+
+
+
+
 .container{
     overflow: auto;
+  
 }
 }
