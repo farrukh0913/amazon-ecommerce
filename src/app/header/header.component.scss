@@ -94,6 +94,9 @@
     }
   }
 }
+.fixed-top{
+  z-index: 3 !important;
+}
 .selected {
   border-bottom: 3px solid #00afd1;
   color: #00afd1 !important;
